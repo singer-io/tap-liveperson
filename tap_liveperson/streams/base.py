@@ -53,6 +53,12 @@ class BaseStream(base):
             'sort': 'start:asc',
         }
 
+    def get_content_to_retrieve(self):
+        try:
+            return {"contentToRetrieve": self.CONTENT_TO_RETRIEVE}
+        except:
+            return {}
+
     def get_filters(self, start, end):
         return {
             'start': {
@@ -86,6 +92,7 @@ class BaseStream(base):
 
             params = self.get_pagination(page)
             body = self.get_filters(updated_after, updated_before)
+            body.update(self.get_content_to_retrieve())
 
             result = self.client.make_request(
                 url, self.API_METHOD, params=params, body=body)

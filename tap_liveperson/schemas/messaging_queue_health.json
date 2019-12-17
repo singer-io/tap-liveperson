@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+        "type": "string"
+    },
+    "skill": {
+        "type": "string"
+    },
+    "timestamp": {
+        "type": "integer"
+    },
+    "unassignedConversations": {
+        "type": "number"
+    },
+    "actionableConversations": {
+        "type": "number"
+    },
+    "notActionableConversations": {
+        "type": "number"
+    },
+    "actionableAndManualSla": {
+        "type": "number"
+    },
+    "actionableAndDuringTransfer": {
+        "type": "number"
+    },
+    "actionableAndConsumerLastMessage": {
+        "type": "number"
+    },
+    "notActionableDuringTransfer": {
+        "type": "number"
+    },
+    "notActionableAndManualSla": {
+        "type": "number"
+    },
+    "unassignedConversationsAndFirstTimeConsumer": {
+        "type": "number"
+    },
+    "avgWaitTimeForAgentAssignment_NewConversation": {
+        "type": "number"
+    },
+    "avgWaitTimeForAgentAssignment_AfterTransfer": {
+        "type": "number"
+    },
+    "avgWaitTimeForAgentAssignment_AfterTransferFromBot": {
+        "type": "number"
+    },
+    "maxWaitTimeForAgentAssignment": {
+        "type": "number"
+    },
+    "waitTimeForAgentAssignment_50thPercentile": {
+        "type": "number"
+    },
+    "waitTimeForAgentAssignment_90thPercentile": {
+        "type": "number"
+    },
+    "avgWaitTimeForAgentAssignment_AfterTransferFromAgent": {
+        "type": "number"
+    },
+    "maxWaitTimeForAgentAssignment_AfterTransferFromAgent": {
+        "type": "number"      
+    }
+  }
+}
