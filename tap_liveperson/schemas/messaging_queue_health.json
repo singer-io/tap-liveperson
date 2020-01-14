@@ -2,64 +2,64 @@
   "type": "object",
   "properties": {
     "id": {
-        "type": "string"
+        "type": ["string", "null"]
     },
     "skill": {
-        "type": "string"
+        "type": ["string", "null"]
     },
     "timestamp": {
-        "type": "integer"
+        "type": ["integer", "null"]
     },
     "unassignedConversations": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "actionableConversations": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "notActionableConversations": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "actionableAndManualSla": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "actionableAndDuringTransfer": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "actionableAndConsumerLastMessage": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "notActionableDuringTransfer": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "notActionableAndManualSla": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "unassignedConversationsAndFirstTimeConsumer": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "avgWaitTimeForAgentAssignment_NewConversation": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "avgWaitTimeForAgentAssignment_AfterTransfer": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "avgWaitTimeForAgentAssignment_AfterTransferFromBot": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "maxWaitTimeForAgentAssignment": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "waitTimeForAgentAssignment_50thPercentile": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "waitTimeForAgentAssignment_90thPercentile": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "avgWaitTimeForAgentAssignment_AfterTransferFromAgent": {
-        "type": "number"
+        "type": ["number", "null"]
     },
     "maxWaitTimeForAgentAssignment_AfterTransferFromAgent": {
-        "type": "number"      
+        "type": ["number", "null"]
     }
   }
 }

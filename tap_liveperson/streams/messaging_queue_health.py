@@ -27,7 +27,7 @@ class MessagingQueueHealthStream(RealtimeStream):
         transformed = []
         for records in metrics_by_skill:
             timestamp = records['timestamp']
-            for skill, data in records['metricsData']['skillsMetrics'].items():
+            for skill, data in records.get('metricsData', {}).get('skillsMetrics', {}).items():
                 new_row = self.transform_record(data)
 
                 new_row['id'] = self.get_pk_value(skill, timestamp)
