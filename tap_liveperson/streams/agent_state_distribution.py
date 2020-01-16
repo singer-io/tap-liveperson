@@ -28,7 +28,7 @@ class AgentStateDistribution(RealtimeStream):
         ]
 
         for record in transformed:
-            record['id'] = self.get_pk_value(record)
+            record['id'] = self.get_pk_value(str(record))
 
         return transformed
 
