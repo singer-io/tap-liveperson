@@ -88,7 +88,7 @@ class BaseStream(base):
 
         stream_schema = self.catalog.schema.to_dict()
         stream_metadata = singer.metadata.to_map(self.catalog.metadata)
-        with Transformer() as transformer:
+        with Transformer() as transformer, singer.metrics.record_counter(endpoint=table) as counter:
             while has_data:
                 url = (
                     'https://{domain}{api_path}'.format(
@@ -107,19 +107,19 @@ class BaseStream(base):
                 total_pages = math.ceil(count / params['limit'])
                 data = self.get_stream_data(result)
 
-                with singer.metrics.record_counter(endpoint=table) as counter:
-                    for obj in data:
-                        obj = transformer.transform(obj, stream_schema, stream_metadata)
-                        singer.write_records(
-                            table,
-                            [obj])
 
-                        counter.increment()
+                for obj in data:
+                    obj = transformer.transform(obj, stream_schema, stream_metadata)
+                    singer.write_records(
+                        table,
+                        [obj])
 
-                        self.state = incorporate(self.state,
-                                                 table,
-                                                 'updated_at',
-                                                 obj.get('updated_at'))
+                    counter.increment()
+
+                    self.state = incorporate(self.state,
+                                             table,
+                                             'updated_at',
+                                             obj.get('updated_at'))
 
                 if count == 0 or page == total_pages:
                     LOGGER.info('Reached end of stream, moving on.')
