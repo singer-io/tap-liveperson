@@ -10,7 +10,7 @@ setup(name='tap-liveperson',
       classifiers=['Programming Language :: Python :: 3 :: Only'],
       py_modules=['tap_liveperson'],
       install_requires=[
-          'tap-framework==0.0.5',
+          'tap-framework==0.1.1',
       ],
       entry_points='''
           [console_scripts]
